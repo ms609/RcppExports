@@ -1,0 +1,1 @@
+#' @useDynLib ExportTest, .registration = TRUE
