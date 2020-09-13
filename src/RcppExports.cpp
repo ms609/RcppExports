@@ -56,14 +56,3 @@ RcppExport SEXP _ExportTest_RcppExport_registerCCallable() {
     R_RegisterCCallable("ExportTest", "_ExportTest_RcppExport_validate", (DL_FUNC)_ExportTest_RcppExport_validate);
     return R_NilValue;
 }
-
-static const R_CallMethodDef CallEntries[] = {
-    {"_ExportTest_hello_world", (DL_FUNC) &_ExportTest_hello_world, 0},
-    {"_ExportTest_RcppExport_registerCCallable", (DL_FUNC) &_ExportTest_RcppExport_registerCCallable, 0},
-    {NULL, NULL, 0}
-};
-
-RcppExport void R_init_ExportTest(DllInfo *dll) {
-    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
-    R_useDynamicSymbols(dll, FALSE);
-}
